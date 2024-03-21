@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 255, 255, 255; /* white */
+  --accent: 228, 228, 231; /* zinc-200 */
+  --lighter-accent: 244, 244, 245; /* zinc-100 */
+  --darker-accent: 212, 212, 216; /* zinc-300 */
+  --text: 0, 0, 0; /* black */
+  --text-secondary: 113, 113, 122; /* zinc-500 */
+  --modal-backdrop: 0, 0, 0, 0.2; /* black */
+  --dropdown-shadow: 9, 9, 11, 0.1; /* zinc-950 10% opacity */
+}
+
+.dark {
+  --primary: 27 27 30; /* zinc-900 */
+  --accent: 63, 63, 70; /* zinc-700 */
+  --lighter-accent: 39, 39, 42; /* zinc-800 */
+  --darker-accent: 82 82 91; /* zinc-600 */
+  --text: 255, 255, 255; /* white */
+  --text-secondary: 161 161 170; /* zinc-500 */
+  --modal-backdrop: 0, 0, 0, 0.5; /* black */
+  --dropdown-shadow: 9, 9, 11; /* zinc-950 */
+}
+
+html,
+body {
+  @apply bg-lighter-accent;
+  @apply text-text;
+  @apply p-0;
+  @apply m-0;
+  @apply font-inter;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+a {
+  @apply text-inherit;
+  @apply no-underline;
+}
+
+* {
+  @apply box-border;
+}
