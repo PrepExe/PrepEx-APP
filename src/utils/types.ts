@@ -54,5 +54,5 @@ export type SetNumberState = React.Dispatch<React.SetStateAction<number>>;
 export type SetStringState = React.Dispatch<React.SetStateAction<string>>;
 export type SetDateState = React.Dispatch<React.SetStateAction<Date>>;
 export default axios.create({
-  baseURL: 'http://3.107.9.11:3000/',
+  baseURL: 'http://65.0.18.163:3000/',
 });
