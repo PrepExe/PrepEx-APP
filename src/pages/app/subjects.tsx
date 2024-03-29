@@ -15,7 +15,7 @@ const SubjectsPage: NextPage = () => {
   const [isAddSubjetModalOpen, setIsAddSubjectModalOpen] = useState(false);
   const [isRemoveSubjectModalOpen, setIsRemoveSubjectModalOpen] = useState(false);
   const [subjects, setSubjects] = useState<Subject[]>([]);
-  const [selectedSubject, setSelectedSubject] = useState<Subject>({} as Subject);
+  const [selectedSubject, setSelectedSubject] = useState<Subject | undefined>({} as Subject);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

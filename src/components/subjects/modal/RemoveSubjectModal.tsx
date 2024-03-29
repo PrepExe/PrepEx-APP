@@ -1,7 +1,7 @@
 import { Subject } from '../../../utils/types';
 
 type RemoveSubjectModalProps = {
-  subject: Subject;
+  subject: Subject | undefined;
   confirm: (subjectId: string) => void;
   closeModal: () => void;
 
@@ -18,12 +18,12 @@ const RemoveSubjectModal = (props: RemoveSubjectModalProps) => {
         <div className='mt-2 flex flex-col gap-4 w-full'>
           <div className='inline-flex border border-accent bg-lighter-accent rounded-md p-2 cursor-default'>
             <div className='outline-none w-full'>
-              {props.subject.subject_icon} {props.subject.subject_name}
+             {(props.subject != undefined) ? props.subject.subject_icon : ''} {(props.subject != undefined) ? props.subject.subject_name : ''} 
             </div>
           </div>
           <div className='flex gap-2 ml-auto'>
             <button type='button' className='bg-primary border border-accent rounded-md h-8 w-fit px-3 hover:bg-accent text-sm' onClick={props.closeModal}>Cancel</button>
-            <button className='bg-primary border border-accent rounded-md h-8 w-fit px-3 hover:bg-accent text-sm text-red-500' onClick={() => props.confirm(props.subject.subject_id)}>Confirm</button>
+            <button className='bg-primary border border-accent rounded-md h-8 w-fit px-3 hover:bg-accent text-sm text-red-500' onClick={() => props.confirm((props.subject != undefined) ? props.subject.subject_id : '')}>Confirm</button>
           </div>
         </div>
       </div>
