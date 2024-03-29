@@ -54,5 +54,5 @@ export type SetNumberState = React.Dispatch<React.SetStateAction<number>>;
 export type SetStringState = React.Dispatch<React.SetStateAction<string>>;
 export type SetDateState = React.Dispatch<React.SetStateAction<Date>>;
 export default axios.create({
-  baseURL: "https://prepex.vercel.app",
+  baseURL: 'https://prepex.vercel.app',
 })
