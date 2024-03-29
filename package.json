@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "proxy": "https://prepex.vercel.app",
   "dependencies": {
     "@heroicons/react": "^2.0.14",
     "axios": "^1.3.2",
