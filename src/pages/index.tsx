@@ -1,8 +1,14 @@
 import axios from 'axios';
 import Router from 'next/router';
 import { SyntheticEvent } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
+
 
 const LoginPage = () => {
+  const toastMessage = (errorMessage: string) => {
+    toast.error(errorMessage, {position: "top-right", closeOnClick: true,})
+  }
 
   const authenticateUser = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -18,6 +24,7 @@ const LoginPage = () => {
       await axios.post('/api/auth/login', data);
       Router.push('/app');
     } catch (err: any) {
+      toastMessage(err.response.data.error);
       console.error('Error during login:', err.response.data.error);
       password.value = '';
     }
@@ -46,6 +53,7 @@ const LoginPage = () => {
           </form>
         </div>
       </div>
+      <ToastContainer position='top-right' />
     </div>
   );
 };

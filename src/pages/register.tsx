@@ -1,14 +1,19 @@
 import axios from 'axios';
 import Router from 'next/router';
 import Link from 'next/link';
-import { SyntheticEvent } from 'react';
+import { SyntheticEvent, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 
 const RegisterPage = () => {
-
+  const toastMessage = (errorMessage: string) => {
+    toast.error(errorMessage, { position: "top-right", closeOnClick: true });
+  };
+  
   const registerUser = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const { uname, email, password, cpassword } = document.forms[0];
+    const { uname, email, password, cpassword } = e.currentTarget;
 
     const data = {
       name: uname.value,
@@ -21,6 +26,7 @@ const RegisterPage = () => {
       await axios.post('/api/auth/register', data);
       Router.push('/app');
     } catch (err: any) {
+      toastMessage(err.response.data.error);
       console.error('Error during register:', err.response.data.error);
       password.value = '';
       cpassword.value = '';
@@ -53,11 +59,12 @@ const RegisterPage = () => {
             </div>
             <button type='submit' className='w-full border border-accent hover:bg-accent font-medium rounded-lg text-sm px-5 py-2.5 text-center'>Sign up</button>
             <p className='text-sm font-light text-text-secondary'>
-              Already have an account? <Link href='/' className='font-medium text-text hover:underline'>Sign in</Link>
+              Already have an account? <Link href='/'>Sign in</Link>
             </p>
           </form>
         </div>
       </div >
+      <ToastContainer position="top-right" /> 
     </div >
   );
 };

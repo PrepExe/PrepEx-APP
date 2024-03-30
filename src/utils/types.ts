@@ -56,3 +56,6 @@ export type SetDateState = React.Dispatch<React.SetStateAction<Date>>;
 export default axios.create({
   baseURL: 'http://65.0.18.163:3000/',
 });
+
+//itha thooki jsonla podu
+// "proxy": "http://65.0.18.163:3000/",
