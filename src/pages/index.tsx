@@ -7,8 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const LoginPage = () => {
   const toastMessage = (errorMessage: string) => {
-    toast.error(errorMessage, {position: "top-right", closeOnClick: true,})
-  }
+    toast.error(errorMessage, { position: 'top-right', closeOnClick: true });
+  };
 
   const authenticateUser = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();

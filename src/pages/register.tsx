@@ -1,13 +1,13 @@
 import axios from 'axios';
 import Router from 'next/router';
 import Link from 'next/link';
-import { SyntheticEvent, useState } from 'react';
+import { SyntheticEvent } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
 
 const RegisterPage = () => {
   const toastMessage = (errorMessage: string) => {
-    toast.error(errorMessage, { position: "top-right", closeOnClick: true });
+    toast.error(errorMessage, { position: 'top-right', closeOnClick: true });
   };
   
   const registerUser = async (e: SyntheticEvent<HTMLFormElement>) => {
