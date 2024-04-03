@@ -34,35 +34,35 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className='flex items-center justify-center h-screen w-full'>
-      <div className='flex justify-center items bg-primary border border-accent py-8 px-16 rounded-lg w-1/3 h-fit'>
-        <div className='w-full space-y-4'>
-          <h1 className='text-2xl font-bold leading-tight tracking-tight'>
-            Create an account
-          </h1>
-          <form className='space-y-4' onSubmit={registerUser}>
-            <div>
-              <label htmlFor='uname' className='block mb-2 text-sm font-medium'>Name</label>
-              <input type='text' name='uname' id='uname' className='border border-accent rounded-lg block w-full p-2.5 focus:outline-accent placeholder:text-text-secondary bg-primary' placeholder='John Doe' />
-            </div>
-            <div>
-              <label htmlFor='email' className='block mb-2 text-sm font-medium'>Email</label>
-              <input type='text' name='email' id='email' className='border border-accent rounded-lg block w-full p-2.5 focus:outline-accent placeholder:text-text-secondary bg-primary' placeholder='john.doe@gmail.com' />
-            </div>
-            <div>
+    <div className='flex items-center justify-center min-h-screen'>
+      <div className='bg-primary border border-accent py-8 px-6 rounded-lg max-w-md w-full'>
+        <h1 className='text-2xl font-bold leading-tight tracking-tight text-center mb-6'>
+          Create an account
+        </h1>
+        <form className='space-y-4' onSubmit={registerUser}>
+          <div>
+            <label htmlFor='uname' className='block mb-2 text-sm font-medium'>Name</label>
+            <input type='text' name='uname' id='uname' className='border border-accent rounded-lg block w-full p-2.5 focus:outline-accent placeholder:text-text-secondary bg-primary' placeholder='John Doe' />
+          </div>
+          <div>
+            <label htmlFor='email' className='block mb-2 text-sm font-medium'>Email</label>
+            <input type='text' name='email' id='email' className='border border-accent rounded-lg block w-full p-2.5 focus:outline-accent placeholder:text-text-secondary bg-primary' placeholder='john.doe@gmail.com' />
+          </div>
+          <div className='flex flex-col md:flex-row md:space-x-4'>
+            <div className='w-full md:w-1/2'>
               <label htmlFor='password' className='block mb-2 text-sm font-medium'>Password</label>
               <input type='password' name='password' id='password' placeholder='••••••••' className='border border-accent rounded-lg block w-full p-2.5 focus:outline-accent placeholder:text-text-secondary bg-primary' />
             </div>
-            <div>
+            <div className='w-full md:w-1/2'>
               <label htmlFor='cpassword' className='block mb-2 text-sm font-medium'>Confirm password</label>
               <input type='password' name='cpassword' id='cpassword' placeholder='••••••••' className='border border-accent rounded-lg block w-full p-2.5 focus:outline-accent placeholder:text-text-secondary bg-primary' />
             </div>
-            <button type='submit' className='w-full border border-accent hover:bg-accent font-medium rounded-lg text-sm px-5 py-2.5 text-center'>Sign up</button>
-            <p className='text-sm font-light text-text-secondary'>
-              Already have an account? <Link href='/'>Sign in</Link>
-            </p>
-          </form>
-        </div>
+          </div>
+          <button type='submit' className='border border-accent hover:bg-accent font-medium rounded-lg text-sm px-5 py-3 text-center w-full'>Sign up</button>
+          <p className='text-sm font-light text-text-secondary text-center'>
+            Already have an account? <Link href='/'>Sign in</Link>
+          </p>
+        </form>
       </div >
       <ToastContainer position="top-right" /> 
     </div >
