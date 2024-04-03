@@ -53,8 +53,12 @@ export type StudyLog = {
 export type SetNumberState = React.Dispatch<React.SetStateAction<number>>;
 export type SetStringState = React.Dispatch<React.SetStateAction<string>>;
 export type SetDateState = React.Dispatch<React.SetStateAction<Date>>;
+// export default axios.create({
+//   baseURL: 'http://65.0.18.163:3000/',
+// });
+
 export default axios.create({
-  baseURL: 'http://65.0.18.163:3000/',
+  baseURL: 'https://prepex.vercel.app/',
 });
 
 //itha thooki jsonla podu
